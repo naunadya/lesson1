@@ -23,7 +23,7 @@ using namespace std;
         else if (index ==3){
         cout << play<< endl<< settings<< endl<<  exit_<< endl;
         }
-    
+    char key;
     cout << "Enter key: ";
     cin >> key;
     if (key =='w'){
@@ -66,13 +66,19 @@ using namespace std;
             }
 
     } else if (index ==2 && key == 'e'){
-        
+            while (key != 'q'){
+            char operation ='+';
+            cout << "Enter operation: ";
+            cin >> operation;
+            cout << "Enter key: ";
+            cin >> key;
+            }
 
     }else {
         break;
     }  
     
     }
-    }
+    
     return 0;
 }
