@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 #define SIZE 3
-//void printMenu (const string arg [size])
+void printMenu (const string arg [SIZE]);
     
 
     int main() {
@@ -15,19 +15,22 @@ using namespace std;
 
     do {     
         if (index ==1){
-            for (int i = 0; i < SIZE; i++){
-                cout << play_[i]  << endl;
-            }
+            printMenu (play_) ;
+            //for (int i = 0; i < SIZE; i++){
+            //    cout << play_[i]  << endl;
+           //}
             
         } else if (index ==2){
-            for (int i = 0; i < SIZE; i++){
-                cout << settings_[i]  << endl;
-            }
+            printMenu (settings_);
+            //for (int i = 0; i < SIZE; i++){
+            //    cout << settings_[i]  << endl;
             
-        } else  if (index ==3){          
-            for (int i = 0; i < SIZE; i++){
-                cout << exit_[i]  << endl;
-            } 
+            
+        } else  if (index ==3){     
+            printMenu (exit_);
+           //for (int i = 0; i < SIZE; i++){
+           //    cout << exit_[i]  << endl;
+            
         }  
          
     cout << "Enter key: ";
@@ -50,8 +53,8 @@ using namespace std;
     return 0;
 }
 
-//void printMenu (const string arg [size]){
-//     for (int i = 0; i < size; i++){                
-///                cout <<  arg [i] << endl;
- //           }     
-//}
+void printMenu (const string arg [SIZE]){
+     for (int i = 0; i < SIZE; i++){                
+                cout <<  arg [i] << endl;
+           }     
+}
