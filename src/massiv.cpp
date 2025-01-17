@@ -2,25 +2,46 @@
 #include <iostream>
 using namespace std;
 #define SIZE 3
-void printMenu (const string arg [SIZE]);  
-void printSettings (const string arg [SIZE]); 
-void printExit (const string arg [SIZE]); 
+void printMenu (const string arg[SIZE]);  
+void printPlay (char operation, char key, int num1, int num2, int rez); 
+void printSettings (char operation, char key); 
+int printKey (int index);
+
     int main() {   
     const string play_ [] = {"_Play_", "Settings", "Exit"};
     const string settings_ [] = {"Play", "_Settings_", "Exit"};
     const string exit_ [] = {"Play", "Settings", "_Exit_"};
-    int index = 1;    
+    int index = 1;
     char key;
-    char operation = '+';    
-    do {     
+    char operation = '+';           
+    while (true) {     
         if (index ==1){
             printMenu (play_) ;
+                                   
         } else if (index ==2){
-           printSettings (settings_);
-        } else  if (index ==3){     
-            printExit (exit_);           
-        }  
-         
+           printMenu (settings_);
+           //if (key =='e'){
+           //     printSettings;           
+            } else  if (index ==3){     
+                printMenu (exit_);           
+                }            
+        
+    index = printKey (index);  
+    } 
+    return 0;
+}
+
+
+void printMenu(const string arg[SIZE]){
+    for (int i = 0; i < SIZE; i++){                
+                cout <<  arg[i] << endl;
+           } 
+ //   cout << "Enter key: ";
+ //   cin >> key;   
+}
+
+int printKey (int index){
+    char key;
     cout << "Enter key: ";
     cin >> key; 
        
@@ -36,21 +57,25 @@ void printExit (const string arg [SIZE]);
         }
         else {index +=1;     
         }
-    } 
-    }while (true);    
-    return 0;
-}
+    } else if (key == 'e' && index ==1){
+        printPlay (char operation, char key, int num1, int num2, int rez);
+    } else if (key == 'e' && index == 2){
+        //cout << "123"<< endl;
+        printSettings (char operation, char key) ;     
+        
+    }
+    return index;
+} 
 
-void printMenu (const string arg [SIZE]){
-    for (int i = 0; i < SIZE; i++){                
-                cout <<  arg [i] << endl;
-           } 
-    cout << "Enter key: ";
-    cin >> key;
-    if (key =='e'&& index ==1){   
-
+void printPlay(char operation, char key, int num1, int num2, int rez){
+    //int index;
+    //char key;  
+    //cout << "Enter key: ";    
+    
+    //if (key =='e')
+    //&& index ==1)
         while (key != 'q'){
-            int num1, num2, rez;
+            //int num1, num2, rez;
             cout << "Enter number 1: ";
             cin >> num1;
             cout << "Enter number 2: ";
@@ -64,9 +89,10 @@ void printMenu (const string arg [SIZE]){
                 }else if (operation =='/'&& num2 !=0){
                     rez = num1 / num2;
                 }else {
+                 if (operation =='/'&& num2 !=0){
                     cout << "Error"<< endl;
                     break;
-                }        
+                }             
             cout << "Rezult = " << rez<< endl;
             cout << "Enter key: ";
             cin >> key;
@@ -74,13 +100,14 @@ void printMenu (const string arg [SIZE]){
     }    
 }
 
-void printSettings (const string arg [SIZE]){
-    for (int i = 0; i < SIZE; i++){                
-        cout <<  arg [i] << endl;
-    } 
-    cout << "Enter key: ";
-    cin >> key;
-        if (index ==2 && key == 'e'){        
+void printSettings(char operation, char key){
+    //int index;
+    //char key;
+    //cout << "Enter key: ";
+    //cin >> key;
+    //char operation;
+        //if (index ==2 )
+        //&& key == 'e')               
         while (key != 'q'){
             cout << "Enter operation: ";
             cin >> operation;
@@ -88,10 +115,4 @@ void printSettings (const string arg [SIZE]){
             cin >> key;     
             }        
     } 
-}
-
-void printExit (const string arg [SIZE]){
-    for (int i = 0; i < SIZE; i++){                
-        cout <<  arg [i] << endl;
-    } 
-}
+//}
