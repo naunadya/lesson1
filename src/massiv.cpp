@@ -6,14 +6,15 @@ void printMenu (const string arg[SIZE]);
 void printPlay (char operation, int index, char key); 
 char printSettings (int index, char key, char operation); 
 int printKey (int index, char operation_play, char operation, char key);
-    char operation_play;
+   // char operation_play;
 
     int main() {   
     const string play_ [] = {"_Play_", "Settings", "Exit"};
     const string settings_ [] = {"Play", "_Settings_", "Exit"};
     const string exit_ [] = {"Play", "Settings", "_Exit_"};
     int index = 1;
-    char key;    
+    char key;  
+    char  operation_play;  
     char operation;           
     while (true) {     
         if (index ==1){
@@ -27,7 +28,7 @@ int printKey (int index, char operation_play, char operation, char key);
                 printMenu (exit_);           
             }            
         
-    index = printKey ( index,  operation_play,  operation,  key);  
+    index = printKey (index,  operation_play,  operation,  key);  
     } 
     // if (key == 'e' && index ==1){
     //    printPlay (operation, index);
