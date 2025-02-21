@@ -1,43 +1,55 @@
 #include <iostream>
 using namespace std;
-//void enter (char arr [10][10]);
-//void print (char arr [10][10]);
+
+template <typename T, typename T2>
+T multi (T number1, T2 number2);
+
+template <typename T, typename T2>
+T sum ( T num1, T2 num2);
+
+
+//#define SQR(x) (x*x)
+int sqr ( int num);
+double sqr (double num);
+// int sum (char num1, char num2);
+//  sum (double num1, double num2);
 
     int main() {
-        int arr [3][2][2][3]= {{{   {1,2,3},
-                                    {4,5,6}
-                                },
-                                {   {10,20,30},
-                                    {40,50,60}
-                                }
-                                },
-                                {{   {100,200,300}, 
-                                     {400,500,600}
-                                },
-                                {   {4000,5000,6000},
-                                    {1000,2000,3000}
-                                }
-                                },
-                                {{   {700,800,900}, 
-                                     {200,300,400}
-                                },
-                                {   {70,80,90},
-                                    {20,30,40}
-                                }
-                                }};
-       // cout << arr[0][0][1];
-        for (int i = 0; i < 3; i+=2){
-            for (int j =0; j < 2; j++){
-                for (int k = 1; k < 2; k++){
-                    for (int m = 2; m >1; m--){
-                        cout <<  (arr [i][j][k][m])<< " ";
-                    }
-                    cout << endl;   
-                }
-                cout << endl;
-            }   
-            cout << endl;
-        }
-
+       //cout <<  sqr (9)<< endl;   
+       // cout <<  sqr (9.5)<< endl;   
+        cout <<  sum (sqr (20), multi (6.76, 5))<< endl;
+        //cout <<  sum ('2', '6')<< endl;
+        // cout <<  sum (5.6 , 12.45)<< endl;
     return 0;
 }    
+
+int sqr ( int num){
+    return num*num;
+}
+
+double sqr ( double num){
+    return num*num;
+}
+template <typename T, typename T2>
+T sum ( T num1, T2 num2){
+    return num1+num2;
+}
+
+template <typename T, typename T2>
+T multi (T number1, T2 number2){
+    return number1*number2;
+}
+
+
+// double sum (double num1, double num2){
+//  return num1+num2;
+// }
+
+// int sum (int num1, int num2){
+//  return num1+num2;
+// }
+
+// int sum (char num1, char num2){
+//  return num1+num2;
+// }
+
